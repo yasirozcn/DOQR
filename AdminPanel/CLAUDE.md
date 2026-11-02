@@ -4,10 +4,8 @@
 
 AdminPanel'de çalışırken kökteki `../AGENTS.md` (özellikle §0 referans kod, §0.2 farklar, §4–§6 sözleşme, §7.1 ortak veritabanı) ve `../CLAUDE.md` (görev akışı) de geçerlidir.
 
-### Referans dosyası nerede?
-- Yalnızca web üzerinden (`WebFetch`): `https://raw.githubusercontent.com/yasirozcn/FenBahceleri/5387bef/AdminPanel/<aynı yol>` (`(panel)` → `%28panel%29`, `[id]` → `%5Bid%5D`). Referans depo **asla** `git clone`/indirme ile bilgisayara çekilmez, diske kaydedilmez (kök AGENTS.md §0.1).
-- Bir dosyayı yazmadan önce: referanstaki aynı dosyayı **ve** içe aktardığı `@/lib/...` dosyalarını okuyun. Bu depodaki `src/lib/db/repo.ts` ve `src/lib/db/types.ts`'i okuyun (fonksiyon imzaları buradan alınır).
-- Bitirince karşılaştırın: yazdığınız dosyayı GitHub'dan okuduğunuz referans içerikle karşılaştırın (diske yazmadan) — kalan farklar yalnızca kök AGENTS.md §0.2'dekiler olmalı (okul adı/logo, `WRONG_STATE` yok, e2e test, Dockerfile npm vb.) ve prompt'un açıkça istedikleri (§0.3).
+### Yazmadan önce
+- Bu depodaki `src/lib/db/repo.ts` ve `src/lib/db/types.ts`'i okuyun (fonksiyon imzaları buradan alınır).
 
 ### Her görevin sonunda çalıştırın ve çıktıyı raporlayın
 ```bash

@@ -4,10 +4,8 @@
 
 QrScannerApp'te çalışırken kökteki `../AGENTS.md` (özellikle §0 referans kod, §0.2 farklar, §4 protokol, §5 API) ve `../CLAUDE.md` (görev akışı) de geçerlidir.
 
-### Referans dosyası nerede?
-- Yalnızca web üzerinden (`WebFetch`): `https://raw.githubusercontent.com/yasirozcn/FenBahceleri/5387bef/QrScannerApp/<aynı yol>` (`(panel)` → `%28panel%29`, `[id]` → `%5Bid%5D`). Referans depo **asla** `git clone`/indirme ile bilgisayara çekilmez, diske kaydedilmez (kök AGENTS.md §0.1).
-- Bir ekranı yazmadan önce: referanstaki ekranı **ve** kullandığı `@/components/*`, `@/lib/*` dosyalarını okuyun. Sunucu tarafını anlamak gerekirse `../AdminPanel/src/app/api/mobile/**` (bu depoda yazıldıysa) veya referanstaki karşılığını okuyun.
-- Bitirince karşılaştırın: yazdığınız dosyayı GitHub'dan okuduğunuz referans içerikle karşılaştırın (diske yazmadan) — kalan farklar yalnızca okul adı (`İzmir Fen`), logo harfleri (`İF`) ve kök AGENTS.md §0.2'deki diğer maddeler ile prompt'un açıkça istedikleri (§0.3) olmalı.
+### Yazmadan önce
+- Bir ekranı yazmadan önce kullandığı `@/components/*`, `@/lib/*` dosyalarını okuyun. Sunucu tarafını anlamak gerekirse `../AdminPanel/src/app/api/mobile/**` dosyalarını okuyun.
 
 ### Her görevin sonunda çalıştırın ve çıktıyı raporlayın
 ```bash

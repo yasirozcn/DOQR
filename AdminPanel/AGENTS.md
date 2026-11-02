@@ -13,7 +13,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 Önce kökteki [`../AGENTS.md`](../AGENTS.md) dosyasını okuyun: protokol, API sözleşmesi, iş kuralları ve **referans kaynak kodu (§0)** oradadır ve **bağlayıcıdır**.
 Bu dosya AdminPanel'in nasıl kurulduğunu, **her dosyaya ne yazılacağını** ve hangi kurallarla geliştirildiğini anlatır.
 
-**Referans:** her dosyanın karşılığı `https://raw.githubusercontent.com/yasirozcn/FenBahceleri/5387bef/AdminPanel/<aynı yol>` — yalnızca web üzerinden okunur, **bilgisayara indirilmez** (kök AGENTS.md §0.1). Yazmadan önce okuyun; kök AGENTS.md §0.2'deki farkları uygulayın.
+**Uyarlamalar:** kök AGENTS.md §0.2'deki farkları uygulayın.
 **Prompt önceliği:** görev referansta olmayan bir özellik veya var olan bir özelliğin değişmesini isterse prompt esastır (kök AGENTS.md §0.3). Değişmeyenler: `/api/mobile/*` sözleşmesi (yol, istek/yanıt, `{ error, code }`), JWT rolleri, `protocol.ts`, `scan.ts` doğrulama sırası ve BLE kontrolü, SQL'in yalnızca `repo.ts`'te olması, şema. Yeni sayfa/action/route eklenirse §2 ağacı ve §4–§5 tabloları aynı işte güncellenir.
 
 ---

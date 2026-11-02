@@ -48,7 +48,7 @@ Docs: https://docs.expo.dev/eas/index.md
 Önce kökteki [`../AGENTS.md`](../AGENTS.md) dosyasını okuyun: protokol, API sözleşmesi, iş kuralları ve **referans kaynak kodu (§0)** oradadır ve **bağlayıcıdır**.
 Bu dosya uygulamanın **her ekranını, her `lib` dosyasını ve kurallarını** anlatır.
 
-**Referans:** her dosyanın karşılığı `https://raw.githubusercontent.com/yasirozcn/FenBahceleri/5387bef/QrScannerApp/<aynı yol>` — yalnızca web üzerinden okunur, **bilgisayara indirilmez** (kök AGENTS.md §0.1). Yazmadan önce okuyun; kök AGENTS.md §0.2'deki farkları uygulayın
+**Uyarlamalar:** kök AGENTS.md §0.2'deki farkları uygulayın
 (uygulamada: görünen okul adı `İzmir Fen`, logo harfleri `İF`, APK adı `izmir-fen-kiosk.apk`; geri kalan her şey aynı).
 
 **Prompt önceliği:** görev referansta olmayan bir ekran/özellik veya var olan bir ekranın değişmesini isterse prompt esastır (kök AGENTS.md §0.3). Değişmeyenler: BLE yapısı (`lib/ble.ts` tarama modeli, `modules/kiosk-beacon` yayını, jeton biçimi, servis UUID), sunucuyla yalnızca `lib/api.ts` → `/api/mobile/*` üzerinden konuşma, `protocol.ts`, `device.ts` cihaz kimliği/güvenli depo anahtarları, kioskta QR'ın cihazda üretilmesi. Yeni ekran eklenirse §2 ağacı ve §4 tablosu aynı işte güncellenir.

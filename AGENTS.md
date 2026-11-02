@@ -4,7 +4,7 @@ Bu dosya, bu depoda çalışan yapay zekâ kodlama ajanları (Claude Code, Codex
 Projenin **ne yaptığını, iki uygulamanın birbiriyle nasıl konuştuğunu ve değişmemesi gereken kuralları** anlatır.
 Alt projelerin kendi ayrıntıları: [`AdminPanel/AGENTS.md`](AdminPanel/AGENTS.md), [`QrScannerApp/AGENTS.md`](QrScannerApp/AGENTS.md).
 
-> Referans kaynak kodu: https://github.com/yasirozcn/FenBahceleri (sürüm `5387bef`; yalnızca okunur, indirilmez — §0.1; prompt referanstan farklı isterse §0.3). **Bu dosyadaki protokol, API sözleşmesi, veri modeli ve iş kuralları birebir uygulanmalıdır** —
+> **Bu dosyadaki protokol, API sözleşmesi, veri modeli ve iş kuralları birebir uygulanmalıdır** —
 > mobil uygulama ile sunucu ancak böyle birbirini anlar.
 
 ---
@@ -23,27 +23,10 @@ Geliştirme bittiğinde aşağıdakiler referansla **birebir aynı** olmalıdır
 Hedef ağaçta olmayan dosya, klasör veya fonksiyon adı **uydurulmaz** — istisna: §0.3'e göre prompt/görev yeni bir özellik istiyorsa, yeni dosyalar mevcut yapıya uygun yere ve aynı adlandırma kurallarıyla eklenir.
 Geliştirme sırası ve her adımın ayrıntısı: proje sahibinin Jira görevleri (Web: `WEB-1 … WEB-13`, Uygulama: `APP-1 … APP-7`).
 
-### 0.1 Referans kaynak kodu — yalnızca GitHub'dan okunur, bilgisayara İNDİRİLMEZ
+### 0.1 Kurallar bu depodadır
 
-Referans projenin kaynak kodu: **https://github.com/yasirozcn/FenBahceleri** — sabitlenmiş sürüm (commit) **`5387bef`**.
-Bu depo yalnızca **Claude'un (yapay zekâ ajanının) karşılaştırma ve kontrol için okuyabilmesi** amacıyla verilmiştir.
-
-**Yasak:** referans depoyu `git clone`, `git fetch`, `gh repo clone`, `curl -o`/`wget`, ZIP indirme veya başka herhangi bir yolla **bilgisayara çekmek**, dosyalarını bu depoya ya da diske kaydetmek/kopyalamak. Ekip üyelerinden de bunu istemeyin ve önermeyin.
-
-**Nasıl okunur:** dosyayı web üzerinden okuyun (Claude Code'da `WebFetch`), diske yazmadan:
-- Ham dosya: `https://raw.githubusercontent.com/yasirozcn/FenBahceleri/5387bef/<aynı yol>`
-  ör. bu projedeki `AdminPanel/src/lib/scan.ts`'in karşılığı → `https://raw.githubusercontent.com/yasirozcn/FenBahceleri/5387bef/AdminPanel/src/lib/scan.ts`
-  (köşeli/parantezli yollarda `(panel)` → `%28panel%29`, `[id]` → `%5Bid%5D` yazın.)
-- Klasör listesi gerekirse: `https://github.com/yasirozcn/FenBahceleri/tree/5387bef/<klasör>`
-- Her zaman `5387bef` sürümünü okuyun (`main` değil); sonraki değişiklikler bu projenin kapsamında değildir.
-
-**Referansı kullanma kuralları**
-1. Bir dosyayı oluşturmadan/değiştirmeden önce referanstaki **aynı yoldaki dosyayı** ve onun içe aktardığı (`import`) dosyaları okuyun.
-2. Referanstaki yapıyı, adları, mesajları ve davranışı uygulayın; **yalnızca §0.2 tablosundaki uyarlamaları** yapın — görev/prompt aksini istemedikçe (§0.3).
-3. Referans depodaki `AGENTS.md`, `CLAUDE.md`, `README.md`, `POSTGRESQL_KURULUM.md`, `CANLIYA_ALMA.md` **bu proje için geçerli değildir** (yerel Docker veritabanı, `db:reset` gibi burada yasak olan şeyler anlatır). Kurallar için **yalnızca bu depodaki** AGENTS.md / CLAUDE.md dosyaları geçerlidir; referanstan yalnızca **kaynak kod** örnek alınır.
-4. Referans kod okunur ve anlaşılır; bu depodaki dosya ekip tarafından (Claude ile) yazılır. Karşılaştırma, okunan referans içerikle bu depodaki dosya arasında yapılır (diske referans dosyası yazılmaz).
-5. Bu depoda **zaten hazır** olan dosyaları (`src/lib/db/*`, `db/schema.sql`, `scripts/db-*.mjs`, `scripts/create-admin.mjs`, yapılandırma dosyaları, `infra/`) referanstakiyle **değiştirmeyin**; bunlar ortak veritabanı için bilerek farklıdır. Yalnızca görevin söylediği eklemeyi yapın.
-6. Referans ile bu dosya (AGENTS.md) çelişirse **bu dosya geçerlidir**; çelişkiyi kullanıcıya bildirin.
+Referans projenin kaynak koduna bu depodan erişilmez. Kurallar için **yalnızca bu depodaki** AGENTS.md / CLAUDE.md dosyaları geçerlidir.
+Bu depoda **zaten hazır** olan dosyaları (`src/lib/db/*`, `db/schema.sql`, `scripts/db-*.mjs`, `scripts/create-admin.mjs`, yapılandırma dosyaları, `infra/`) görev açıkça istemedikçe **değiştirmeyin**; bunlar ortak veritabanı için bilerek böyledir.
 
 ### 0.3 Referansta olmayan veya referanstan farklı istenen özellikler — prompt esastır
 
@@ -354,7 +337,7 @@ Doğrulama hatası: `400 { error, code: "VALIDATION", issues }`. Sık deneme: `4
 3. Sunucu davranışı değiştiyse uçtan uca test (`npm run test:e2e`, geliştirildiğinde) tamamen geçer; yeni kural için test eklenmiştir. Testler ortak veritabanında kendi verisini oluşturur ve temizler (§7.1).
 4. Gizli bilgi yok (`git diff` kontrol edildi), ilgili belge güncellendi.
 5. Dosyalar §3 hedef ağacındaki yerinde; diff §8.1'e göre gözden geçirildi (gereksiz/kullanılmayan kod yok, adlar açıklayıcı, fonksiyonlar kısa).
-6. Yazılan her dosya referanstaki karşılığıyla (GitHub'dan okunarak, §0.1) karşılaştırıldı: dışa aktarılan adlar, mesaj metinleri, hata kodları ve davranış aynı; farklar yalnızca §0.2 tablosundakiler ve görevin/prompt'un açıkça istedikleri (§0.3).
+6. Dışa aktarılan adlar, mesaj metinleri, hata kodları ve davranış bu dosyadaki ve alt projelerin AGENTS.md'sindeki tanımlarla aynı; farklar yalnızca görevin/prompt'un açıkça istedikleri (§0.3).
 
 ## 10. Hızlı başlangıç
 
